@@ -1,25 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './components/App';
+import reportWebVitals from './reportWebVitals';
 
-function Ticket(props){
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-  return (
-    <React.Fragment>
-      <div onClick = {() => props.whenTicketClicked(props.id)}>
-        <h3>{props.location} - {props.names}</h3>
-        <p><em>{props.issue}</em></p>
-        <hr/>
-      </div>
-    </React.Fragment>
-  );
-}
-
-Ticket.propTypes = {
-  names: PropTypes.string,
-  location: PropTypes.string,
-  issue: PropTypes.string,
-  id: PropTypes.string,
-  whenTicketClicked: PropTypes.func
-}
-
-export default Ticket;
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
